@@ -270,7 +270,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Lemayan Leleina**
+**Dennis Lemayan Leleina**
 
 - GitHub: [@lemayan](https://github.com/lemayan)
 - LinkedIn: [Dennis Leleina](https://linkedin.com/in/dennis-leleina-500a01201)
