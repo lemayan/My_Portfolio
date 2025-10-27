@@ -1,29 +1,31 @@
-# 🚀 Modern Portfolio Website
+# Modern Portfolio Website
 
 A stunning, fully responsive portfolio website built with React and cutting-edge web technologies. Features smooth animations, 3D graphics, and an elegant user interface.
+
+![Portfolio Screenshot](./public/assets/portfolio.png)
 
 ![Portfolio Preview](https://img.shields.io/badge/React-18.x-blue?style=for-the-badge&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern UI/UX** - Clean, professional design with smooth animations
-- 📱 **Fully Responsive** - Optimized for all devices and screen sizes
-- 🌟 **Interactive 3D Elements** - Three.js powered spaceman model with orbit controls
-- ⚡ **Fast Performance** - Built with Vite for lightning-fast load times
-- 🎭 **Smooth Animations** - Framer Motion powered transitions and reveals
-- 📧 **Contact Form** - Integrated EmailJS for seamless communication
-- 🎊 **Confetti Celebrations** - Fun animations on form submission
-- 🔄 **Loading Screen** - Custom animated loader with logo and sparkles
-- 📜 **Scroll Animations** - Sections reveal as you scroll
-- 🧭 **Active Navigation** - Highlights current section in navbar
-- 📄 **Legal Pages** - Terms & Conditions and Privacy Policy
-- ⬆️ **Scroll to Top** - Quick navigation button
-- 🌓 **Page Transitions** - Smooth fade effects between routes
+- **Modern UI/UX** - Clean, professional design with smooth animations
+- **Fully Responsive** - Optimized for all devices and screen sizes
+- **Interactive 3D Elements** - Three.js powered spaceman model with orbit controls
+- **Fast Performance** - Built with Vite for lightning-fast load times
+- **Smooth Animations** - Framer Motion powered transitions and reveals
+- **Contact Form** - Integrated EmailJS for seamless communication
+- **Confetti Celebrations** - Fun animations on form submission
+- **Loading Screen** - Custom animated loader with logo and sparkles
+- **Scroll Animations** - Sections reveal as you scroll
+- **Active Navigation** - Highlights current section in navbar
+- **Legal Pages** - Terms & Conditions and Privacy Policy
+- **Scroll to Top** - Quick navigation button
+- **Page Transitions** - Smooth fade effects between routes
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core
 - **React 18** - UI library
@@ -60,13 +62,13 @@ A stunning, fully responsive portfolio website built with React and cutting-edge
 - **Maath** - Math utilities for animations
 - **ESLint** - Code linting
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 - **Node.js** (v16.0 or higher)
 - **npm** or **yarn** package manager
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -141,7 +143,7 @@ npm run preview
 yarn preview
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
@@ -191,7 +193,7 @@ portfolio/
 └── vite.config.js
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Update Personal Information
 
@@ -226,7 +228,7 @@ public/assets/Dennis_Lemayan_CV.pdf
 
 Or update the download link in `src/sections/Navbar.jsx`
 
-## 🌐 Deployment
+## Deployment
 
 ### Netlify
 ```bash
@@ -246,13 +248,13 @@ npm run build
 # Use gh-pages to deploy dist/ folder
 ```
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - **Mobile:** < 768px
 - **Tablet:** 768px - 1024px
 - **Desktop:** > 1024px
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -262,11 +264,11 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## Author
 
 **Lemayan Leleina**
 
@@ -274,7 +276,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - LinkedIn: [Dennis Leleina](https://linkedin.com/in/dennis-leleina-500a01201)
 - WhatsApp: [+254 715 197 671](https://wa.me/254715197671)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Three.js](https://threejs.org/) - 3D graphics
 - [Framer Motion](https://www.framer.com/motion/) - Animations
@@ -283,15 +285,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Magic UI](https://magicui.design/) - UI components
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - React 3D renderer
 
-## 📸 Screenshots
+## Screenshots
 
-> Add screenshots of your portfolio here
+![Portfolio Hero Section](./public/assets/portfolio.png)
+*Hero section featuring 3D spaceman animation and dynamic background*
 
-## 🐛 Known Issues
+## Known Issues
 
 None at the moment. Please report any bugs in the [Issues](https://github.com/lemayan/My_Portfolio/issues) section.
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] Dark/Light mode toggle
 - [ ] Blog section
@@ -302,6 +305,6 @@ None at the moment. Please report any bugs in the [Issues](https://github.com/le
 
 ---
 
-⭐ **If you found this project helpful, please give it a star!** ⭐
+**If you found this project helpful, please give it a star!**
 
 Made with ❤️ by Lemayan Leleina
