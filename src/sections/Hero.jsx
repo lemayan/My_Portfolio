@@ -1,7 +1,7 @@
 import { OrbitControls } from "@react-three/drei"
 import HeroText from "../components/HeroText"
 import ParallaxBackground from "../components/ParallaxBackground"
-import { SpaceMan } from "../components/spaceman"
+import { SpaceMan } from "../components/Spaceman"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { useMediaQuery } from "react-responsive"
 import { easing } from "maath"
