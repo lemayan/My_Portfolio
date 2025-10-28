@@ -1,8 +1,8 @@
 import Card from "../components/Card";
 import { useRef } from "react";
-import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
 import {Frameworks} from "../components/Frameworks";
+import { motion } from "motion/react";
 
 const About = () => {
     const grid2Container = useRef();
@@ -71,23 +71,50 @@ return (
             </div>
             {/* Grid 3 */}
             <div className="grid-black-color grid-3 relative overflow-hidden">
-                <div className="z-10 w-full sm:w-[50%] px-4 sm:px-0">
-                    <p className="headtext text-center sm:text-left mb-3">
-                        Time Zone
-                    </p>
-                    <div className="space-y-3 text-center sm:text-left">
-                        <p className="text-white/90 font-medium text-base sm:text-lg">
-                            Based in Nairobi, Kenya
+                <motion.div 
+                    className="z-10 w-full h-full flex flex-col items-center justify-center gap-6 p-6"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="text-center"
+                    >
+                        <p className="headtext mb-2 bg-gradient-to-r from-purple-400 via-violet-400 to-blue-400 bg-clip-text text-transparent">
+                            Time Zone
                         </p>
-                        <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                        <div className="h-1 w-20 mx-auto bg-gradient-to-r from-purple-500 to-blue-500 rounded-full" />
+                    </motion.div>
+                    
+                    <motion.div 
+                        className="space-y-4 text-center max-w-md"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-white text-xl sm:text-2xl font-bold tracking-wide">
+                            Nairobi, Kenya
+                        </p>
+                        <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                            East Africa Time (EAT) • UTC+3
+                        </p>
+                        <motion.p 
+                            className="text-white/70 text-sm sm:text-base leading-relaxed mt-4 pt-4 border-t border-white/20"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            viewport={{ once: true }}
+                        >
                             Open to remote collaboration and work opportunities worldwide
-                        </p>
-                    </div>
-                </div>
-                {/* Globe - Optimized for all devices */}
-                <figure className="absolute -right-10 top-1/2 -translate-y-1/2 w-[180px] sm:w-auto sm:right-auto sm:left-[30%] sm:top-[10%] sm:translate-y-0 opacity-40 sm:opacity-100 pointer-events-none">
-                    <Globe/>
-                </figure>
+                        </motion.p>
+                    </motion.div>
+                </motion.div>
 
 
             </div>
