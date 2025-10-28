@@ -32,22 +32,26 @@ return (
                 
                 {/* Mobile: Animated card without image */}
                 <motion.div 
-                    className="z-10 w-full h-full flex flex-col justify-center gap-4 p-6 md:hidden"
+                    className="z-10 w-full h-full flex flex-col justify-center gap-6 p-8 md:hidden"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
                     <motion.div
+                        className="space-y-4"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
-                            Hi, I'm Dennis Lemayan Leleina
-                        </p>
-                        <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-4" />
+                        <div>
+                            <p className="text-sm font-medium text-purple-400 mb-2 tracking-wide uppercase">Full-Stack Developer</p>
+                            <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                                Lemayan Leleina
+                            </h3>
+                        </div>
+                        <div className="h-1 w-20 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-full" />
                     </motion.div>
                     
                     <motion.p 
@@ -57,8 +61,21 @@ return (
                         transition={{ duration: 0.6, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        A passionate full-stack developer who transforms complex ideas into seamless digital experiences that users love.
+                        Transforming complex ideas into seamless digital experiences that users love.
                     </motion.p>
+                    
+                    {/* Decorative elements */}
+                    <motion.div 
+                        className="flex gap-2"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+                        <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" style={{ animationDelay: '0.2s' }} />
+                        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" style={{ animationDelay: '0.4s' }} />
+                    </motion.div>
                 </motion.div>
                 
                 {/* Desktop: Original layout with image */}
