@@ -8,6 +8,12 @@ import { twMerge } from "tailwind-merge"
 
 const MOVEMENT_DAMPING = 1400
 
+// Detect if device is mobile
+const isMobile = () => {
+  if (typeof window === 'undefined') return false
+  return window.innerWidth < 640
+}
+
 const GLOBE_CONFIG  = {
 width: 800,
   height: 800,
@@ -85,8 +91,16 @@ export function Globe({
     window.addEventListener("resize", onResize)
     onResize()
 
-    const globe = createGlobe(canvasRef.current, {
+    // Optimize config for mobile
+    const mobile = isMobile()
+    const optimizedConfig = mobile ? {
       ...config,
+      devicePixelRatio: 1.5, // Lower pixel ratio for better performance
+      mapSamples: 12000, // Reduce detail for better performance
+    } : config
+
+    const globe = createGlobe(canvasRef.current, {
+      ...optimizedConfig,
       width: width * 2,
       height: width * 2,
       onRender: (state) => {
@@ -107,13 +121,13 @@ export function Globe({
   return (
     <div
       className={twMerge(
-        " mx-auto aspect-[1/1] w-full max-w-[600px]",
+        "mx-auto aspect-[1/1] w-full max-w-[600px]",
         className
       )}
     >
       <canvas
         className={twMerge(
-          "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "size-full sm:size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
         onPointerDown={(e) => {

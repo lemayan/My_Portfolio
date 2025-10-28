@@ -70,8 +70,8 @@ return (
                 </div>
             </div>
             {/* Grid 3 */}
-            <div className="grid-black-color grid-3">
-                <div className="z-10 w-[50%]">
+            <div className="grid-black-color grid-3 relative overflow-hidden">
+                <div className="z-10 w-full sm:w-[50%] px-4 sm:px-0">
                     <p className="headtext text-center sm:text-left mb-3">
                         Time Zone
                     </p>
@@ -84,8 +84,8 @@ return (
                         </p>
                     </div>
                 </div>
-                {/* Globe - Shows on desktop/tablet only */}
-                <figure className="absolute left-[30%] top-[10%] hidden sm:block">
+                {/* Globe - Optimized for all devices */}
+                <figure className="absolute -right-10 top-1/2 -translate-y-1/2 w-[180px] sm:w-auto sm:right-auto sm:left-[30%] sm:top-[10%] sm:translate-y-0 opacity-20 sm:opacity-100 pointer-events-none">
                     <Globe/>
                 </figure>
 
