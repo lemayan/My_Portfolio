@@ -86,7 +86,7 @@ return (
                 </figure>
                 
                 {/* Mobile fallback - Show emoji globe on small screens */}
-                <div className="absolute left-[30%] top-[10%] block sm:hidden text-8xl animate-spin-slow">
+                <div className="absolute right-5 bottom-5 sm:hidden text-6xl animate-spin-slow">
                     🌍
                 </div>
 
