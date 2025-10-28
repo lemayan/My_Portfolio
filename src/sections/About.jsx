@@ -3,6 +3,7 @@ import { useRef } from "react";
 import CopyEmailButton from "../components/CopyEmailButton";
 import {Frameworks} from "../components/Frameworks";
 import { motion } from "motion/react";
+import { Globe } from "../components/globe";
 
 const About = () => {
     const grid2Container = useRef();
@@ -115,6 +116,11 @@ return (
                         </motion.p>
                     </motion.div>
                 </motion.div>
+                
+                {/* Globe - Desktop only */}
+                <figure className="absolute left-[30%] top-[10%] hidden lg:block">
+                    <Globe/>
+                </figure>
 
 
             </div>
