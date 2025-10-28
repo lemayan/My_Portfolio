@@ -20,8 +20,11 @@ const Hero = () => {
         <figure className="absolute inset-0 pointer-events-none" style={{ width: "100vw", height: "100vh" }}>
           <Canvas 
             camera={{ position: [0, 1, 3] }}
-            gl={{ antialias: true, alpha: true }}
-            dpr={[1, 2]}
+            gl={{ 
+              antialias: !isMobile, // Disable on mobile for better performance
+              alpha: true 
+            }}
+            dpr={isMobile ? [1, 1] : [1, 2]} // Lower quality on mobile
             performance={{ min: 0.5 }}
           >
             <Suspense fallback={<Loader />}>
