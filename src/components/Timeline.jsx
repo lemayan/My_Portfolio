@@ -37,7 +37,7 @@ export const Timeline = ({
             <div
               className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div
-                className="h-10 absolute -left-[15px] w-10 rounded-full  bg-midnight flex items-center justify-center">
+                className="h-10 absolute left-[-15px] md:-left-[15px] w-10 rounded-full  bg-midnight flex items-center justify-center">
                 <div
                   className="h-4 w-4 rounded-full  bg-neutral-800 border  border-neutral-700 p-2" />
               </div>
@@ -83,7 +83,7 @@ export const Timeline = ({
           style={{
             height: height + "px",
           }}
-          className="absolute left-[14px] md:left-[4px] top-0 overflow-hidden w-[2px] z-10
+          className="absolute left-[4px] md:left-[4px] top-0 overflow-hidden w-[2px] z-10
           bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] 
           from-transparent from-[0%] 
            via-neutral-700 to-transparent to-[99%] 
