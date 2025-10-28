@@ -85,7 +85,7 @@ return (
                     </div>
                 </div>
                 {/* Globe - Optimized for all devices */}
-                <figure className="absolute -right-10 top-1/2 -translate-y-1/2 w-[180px] sm:w-auto sm:right-auto sm:left-[30%] sm:top-[10%] sm:translate-y-0 opacity-20 sm:opacity-100 pointer-events-none">
+                <figure className="absolute -right-10 top-1/2 -translate-y-1/2 w-[180px] sm:w-auto sm:right-auto sm:left-[30%] sm:top-[10%] sm:translate-y-0 opacity-40 sm:opacity-100 pointer-events-none">
                     <Globe/>
                 </figure>
 

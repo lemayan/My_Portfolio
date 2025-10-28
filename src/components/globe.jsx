@@ -95,8 +95,8 @@ export function Globe({
     const mobile = isMobile()
     const optimizedConfig = mobile ? {
       ...config,
-      devicePixelRatio: 1.5, // Lower pixel ratio for better performance
-      mapSamples: 12000, // Reduce detail for better performance
+      devicePixelRatio: 2, // Keep high quality
+      mapSamples: 14000, // Better detail, still performant
     } : config
 
     const globe = createGlobe(canvasRef.current, {
