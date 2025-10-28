@@ -46,6 +46,17 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  --animate-spin-slow: spin-slow 20s linear infinite;
 }
 body {
   background: #030412;
