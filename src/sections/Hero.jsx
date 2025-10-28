@@ -16,11 +16,13 @@ const Hero = () => {
     <section className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space">
         <HeroText />
         <ParallaxBackground />
-        <figure className="absolute inset-0" style={{ width: "100vw", height: "100vh" }}>
+        {/* Lazy load the 3D canvas to not block initial page load */}
+        <figure className="absolute inset-0 pointer-events-none" style={{ width: "100vw", height: "100vh" }}>
           <Canvas 
             camera={{ position: [0, 1, 3] }}
             gl={{ antialias: true, alpha: true }}
             dpr={[1, 2]}
+            performance={{ min: 0.5 }}
           >
             <Suspense fallback={<Loader />}>
               <Float

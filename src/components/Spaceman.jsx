@@ -16,7 +16,7 @@ useGLTF.preload('/models/tenhun_falling_spaceman_fanart.glb')
 
 export function SpaceMan(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models/tenhun_falling_spaceman_fanart.glb')
+  const { nodes, materials, animations } = useGLTF('/models/tenhun_falling_spaceman_fanart.glb', true) // Enable Draco compression
   const { actions } = useAnimations(animations, group)
   useEffect(() => {
     if (animations.length > 0) {
