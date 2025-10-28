@@ -72,14 +72,17 @@ return (
             {/* Grid 3 */}
             <div className="grid-black-color grid-3">
                 <div className="z-10 w-[50%]">
-                    <p className="headtext text-center sm:text-left">
+                    <p className="headtext text-center sm:text-left mb-3">
                         Time Zone
                     </p>
-                    <p className="subtext text-center sm:text-left">
-                       🌍 Based in Nairobi, Kenya <br /> 
-                       ✈️ Open to remote collaboration and work opportunities worldwide
-                    </p> 
-
+                    <div className="space-y-3 text-center sm:text-left">
+                        <p className="text-white/90 font-medium text-base sm:text-lg">
+                            Based in Nairobi, Kenya
+                        </p>
+                        <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                            Open to remote collaboration and work opportunities worldwide
+                        </p>
+                    </div>
                 </div>
                 {/* Globe - Shows on desktop/tablet only */}
                 <figure className="absolute left-[30%] top-[10%] hidden sm:block">
