@@ -1,16 +1,20 @@
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 
 const ParallaxBackground = () => {
+  const isMobile = useMediaQuery({ maxWidth: 853 });
   const { scrollYProgress } = useScroll();
-  const x = useSpring(scrollYProgress, { damping: 50 });
-  const mountain3Y = useTransform(x, [0, 0.5], ["0%", "70%"]);
-  const planetsX = useTransform(x, [0, 0.5], ["0%", "-20%"]);
-  const mountain2Y = useTransform(x, [0, 0.5], ["0%", "30%"]);
+  
+  // Reduce parallax intensity and increase damping on mobile for smoother performance
+  const x = useSpring(scrollYProgress, { damping: isMobile ? 100 : 50, stiffness: isMobile ? 100 : 200 });
+  const mountain3Y = useTransform(x, [0, 0.5], ["0%", isMobile ? "20%" : "70%"]);
+  const planetsX = useTransform(x, [0, 0.5], ["0%", isMobile ? "0%" : "-20%"]);
+  const mountain2Y = useTransform(x, [0, 0.5], ["0%", isMobile ? "10%" : "30%"]);
   const mountain1Y = useTransform(x, [0, 0.5], ["0%", "0%"]);
 
   return (
-    <section className="absolute inset-0 bg-black/40">
-      <div className="relative h-screen overflow-y-hidden">
+    <section className="absolute inset-0 bg-black/60">
+      <div className="relative h-screen overflow-y-hidden" style={{ willChange: 'transform' }}>
         {/* Background Sky */}
         <div
           className="absolute inset-0 w-full h-screen -z-50"
@@ -18,6 +22,7 @@ const ParallaxBackground = () => {
             backgroundImage: "url(/assets/sky.jpg)",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
+            transform: "translateZ(0)",
           }}
         />
         {/* Mountain Layer 3 */}
@@ -28,6 +33,7 @@ const ParallaxBackground = () => {
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain3Y,
+            transform: "translateZ(0)",
           }}
         />
         {/* Planets */}
@@ -38,6 +44,7 @@ const ParallaxBackground = () => {
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             x: planetsX,
+            transform: "translateZ(0)",
           }}
         />
         {/* Mountain Layer 2 */}
@@ -48,6 +55,7 @@ const ParallaxBackground = () => {
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain2Y,
+            transform: "translateZ(0)",
           }}
         />
         {/* Mountaine Layer 1 */}
@@ -58,6 +66,7 @@ const ParallaxBackground = () => {
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain1Y,
+            transform: "translateZ(0)",
           }}
         />
       </div>
