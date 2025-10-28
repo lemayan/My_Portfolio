@@ -76,11 +76,11 @@ return (
                         Time Zone
                     </p>
                     <p className="subtext">
-                       I'm based in Nairobi, Kenya. <br /> I'm open to remote collaboration and work opportunities.
+                       I'm based in Nairobi, Kenya. <br /> I’m open to remote collaboration and work opportunities.
                     </p> 
 
                 </div>
-                <figure className="absolute left-[30%] top-[10%] hidden md:block">
+                <figure className="absolute left-[30%] top-[10%] ">
                     <Globe/>
 
                 </figure>

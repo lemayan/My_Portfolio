@@ -9,15 +9,15 @@ import { twMerge } from "tailwind-merge"
 const MOVEMENT_DAMPING = 1400
 
 const GLOBE_CONFIG  = {
-  width: 600,
-  height: 600,
+width: 800,
+  height: 800,
   onRender: () => {},
-  devicePixelRatio: 1.5,
+  devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
   dark: 1,
   diffuse: 0.4,
-  mapSamples: 12000,
+  mapSamples: 16000,
   mapBrightness: 6,
   baseColor: [0.1, 0.1, 0.1],
   markerColor: [1, 1, 1],
@@ -113,7 +113,7 @@ export function Globe({
     >
       <canvas
         className={twMerge(
-          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
         onPointerDown={(e) => {
