@@ -71,9 +71,10 @@ return (
                 </div>
             </div>
             {/* Grid 3 */}
-            <div className="grid-black-color grid-3 relative overflow-hidden">
+            <div className="grid-black-color grid-3">
+                {/* Mobile: Animated Card */}
                 <motion.div 
-                    className="z-10 w-full h-full flex flex-col items-center justify-center gap-6 p-6"
+                    className="z-10 w-full h-full flex flex-col items-center justify-center gap-6 p-6 lg:hidden"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -116,6 +117,21 @@ return (
                         </motion.p>
                     </motion.div>
                 </motion.div>
+
+                {/* Desktop: Original Simple Text + Globe */}
+                <div className="z-10 w-[50%] hidden lg:block">
+                    <p className="headtext text-left mb-3">
+                        Time Zone
+                    </p>
+                    <div className="space-y-3 text-left">
+                        <p className="text-white/90 font-medium text-lg">
+                            Based in Nairobi, Kenya
+                        </p>
+                        <p className="text-white/70 text-base leading-relaxed">
+                            Open to remote collaboration and work opportunities worldwide
+                        </p>
+                    </div>
+                </div>
                 
                 {/* Globe - Desktop only */}
                 <figure className="absolute left-[30%] top-[10%] hidden lg:block">
