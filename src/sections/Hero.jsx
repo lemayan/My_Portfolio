@@ -27,14 +27,16 @@ const Hero = () => {
               </Float>
             </Suspense>
             <Rig />
-            <OrbitControls 
-              enableZoom={false}
-              enableDamping={true}
-              dampingFactor={0.1}
-              rotateSpeed={0.5}
-              minPolarAngle={Math.PI / 4}
-              maxPolarAngle={Math.PI / 1.5}
-            />
+            {!isMobile && (
+              <OrbitControls 
+                enableZoom={false}
+                enableDamping={true}
+                dampingFactor={0.1}
+                rotateSpeed={0.5}
+                minPolarAngle={Math.PI / 4}
+                maxPolarAngle={Math.PI / 1.5}
+              />
+            )}
             <ambientLight intensity={0.5} />
             <directionalLight position={[2, 5, 2]} intensity={1} />
             <directionalLight position={[-2, -5, -2]} intensity={1} />

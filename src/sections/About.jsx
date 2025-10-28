@@ -72,23 +72,19 @@ return (
             {/* Grid 3 */}
             <div className="grid-black-color grid-3">
                 <div className="z-10 w-[50%]">
-                    <p className="headtext">
+                    <p className="headtext text-center sm:text-left">
                         Time Zone
                     </p>
-                    <p className="subtext">
-                       I'm based in Nairobi, Kenya. <br /> I'm open to remote collaboration and work opportunities.
+                    <p className="subtext text-center sm:text-left">
+                       🌍 Based in Nairobi, Kenya <br /> 
+                       ✈️ Open to remote collaboration and work opportunities worldwide
                     </p> 
 
                 </div>
-                {/* Globe - Hidden on mobile for performance */}
+                {/* Globe - Shows on desktop/tablet only */}
                 <figure className="absolute left-[30%] top-[10%] hidden sm:block">
                     <Globe/>
                 </figure>
-                
-                {/* Mobile fallback - Show emoji globe on small screens */}
-                <div className="absolute right-5 bottom-5 sm:hidden text-6xl animate-spin-slow">
-                    🌍
-                </div>
 
 
             </div>
