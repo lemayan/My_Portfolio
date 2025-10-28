@@ -20,20 +20,55 @@ return (
         <h2 className="text-heading">About Me</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
             {/* Grid 1 */}
-            <div className="flex items-end grid-default-color grid-1">
+            <div className="relative flex items-end grid-default-color grid-1 overflow-hidden">
+                {/* Desktop: Show image */}
                 {imageLoaded && (
                     <img
                         src="assets/coding-pov.png"
-                        className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+                        className="hidden md:block absolute scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
                         loading="lazy"
                     />
                 )}
-                <div className="z-10">
+                
+                {/* Mobile: Animated card without image */}
+                <motion.div 
+                    className="z-10 w-full h-full flex flex-col justify-center gap-4 p-6 md:hidden"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                >
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+                            Hi, I'm Dennis Lemayan Leleina
+                        </p>
+                        <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-4" />
+                    </motion.div>
+                    
+                    <motion.p 
+                        className="text-neutral-300 text-base leading-relaxed"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        A passionate full-stack developer who transforms complex ideas into seamless digital experiences that users love.
+                    </motion.p>
+                </motion.div>
+                
+                {/* Desktop: Original layout with image */}
+                <div className="z-10 hidden md:block">
                     <p className="headtext">Hi, I'm Dennis Lemayan Leleina</p>
                     <p className="subtext">
                         A passionate full-stack developer who transforms complex ideas into seamless digital experiences that users love.
                     </p>
                 </div>
+                
                 <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 bg-gradient-to-t from-indigo" />
             </div>
             {/* Grid 2 */}

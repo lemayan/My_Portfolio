@@ -122,7 +122,7 @@ const HeroText = () => {
                 <motion.a 
                   href="/assets/Dennis_Lemayan_CV.pdf" 
                   download="Dennis_Lemayan_Leleina_CV.pdf"
-                  className='mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 flex items-center gap-2 w-fit'
+                  className='mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 flex items-center justify-center gap-2 w-fit mx-auto'
                   variants={variants}
                   initial="hidden"
                   animate="visible"
