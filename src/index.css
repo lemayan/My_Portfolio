@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 @import "tailwindcss";
 @theme {
-  --color-primary: #030412;
-  --color-midnight: #06091f;
-  --color-navy: #161a31;
+  --color-primary: #0f0a1f;
+  --color-midnight: #1a0f2e;
+  --color-navy: #1e1040;
   --color-indigo: #1f1e39;
   --color-storm: #282b4b;
   --color-aqua: #33c2cc;
@@ -59,7 +59,8 @@
   --animate-spin-slow: spin-slow 20s linear infinite;
 }
 body {
-  background: #030412;
+  background: linear-gradient(to bottom, #0f0a1f 0%, #030412 50%, #030412 100%);
+  background-attachment: fixed;
   font-family: "Funnel Display", sans-serif;
   color: white;
   scroll-behavior: smooth;

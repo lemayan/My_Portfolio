@@ -38,11 +38,12 @@ const HeroText = () => {
                         initial="hidden"
                         animate="visible"
                         transition={{ delay: 1.5 }}
-                        className="my-2"
+                        className="my-4 min-h-[100px] flex items-center"
                     >
                         <FlipWords
                             words={["Innovative", "Responsive", "User-Friendly"]}
-                            className="font-black text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-7xl"
+                            duration={4000}
+                            className="font-black text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-7xl z-20"
                         />
                     </motion.div>
                     <motion.p
@@ -55,22 +56,20 @@ const HeroText = () => {
                         Web Solutions
                     </motion.p>
                     
-                    {/* Download CV Button */}
-                    <motion.a
-                        href="/assets/resume.pdf"
-                        download
-                        className="mt-8 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-2 group"
-                        variants={variants}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{ delay: 2.1 }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                    {/* Download CV Button - Desktop */}
+                    <motion.a 
+                      href="/assets/Dennis_Lemayan_CV.pdf" 
+                      download="Dennis_Lemayan_Leleina_CV.pdf"
+                      className='mt-8 px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 flex items-center gap-2 w-fit'
+                      variants={variants}
+                      initial="hidden"
+                      animate="visible"
+                      transition={{ delay: 2 }}
                     >
-                        <svg className="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Download CV
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download CV
                     </motion.a>
                 </div>
             </div>
@@ -104,6 +103,7 @@ const HeroText = () => {
                     >
                         <FlipWords
                             words={["Innovative", "Responsive", "User-Friendly"]}
+                            duration={4000}
                             className="font-black text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-6xl"
                         />
                     </motion.div>
@@ -118,22 +118,20 @@ const HeroText = () => {
                     </motion.p>
                 </div>
                 
-                {/* Download CV Button - Mobile */}
-                <motion.a
-                    href="/assets/resume.pdf"
-                    download
-                    className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2 mx-auto group"
-                    variants={variants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 2.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                {/* Download CV Button */}
+                <motion.a 
+                  href="/assets/Dennis_Lemayan_CV.pdf" 
+                  download="Dennis_Lemayan_Leleina_CV.pdf"
+                  className='mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 flex items-center gap-2 w-fit'
+                  variants={variants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ delay: 2 }}
                 >
-                    <svg className="w-5 h-5 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Download CV
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download CV
                 </motion.a>
             </div>
         </div>
