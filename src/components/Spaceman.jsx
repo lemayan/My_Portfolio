@@ -11,6 +11,9 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import { useMotionValue, useSpring } from 'motion/react'
 import { useFrame } from '@react-three/fiber'
 
+// Preload the model
+useGLTF.preload('/models/tenhun_falling_spaceman_fanart.glb')
+
 export function SpaceMan(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/tenhun_falling_spaceman_fanart.glb')

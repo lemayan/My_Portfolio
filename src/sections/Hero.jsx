@@ -17,9 +17,17 @@ const Hero = () => {
         <HeroText />
         <ParallaxBackground />
         <figure className="absolute inset-0" style={{ width: "100vw", height: "100vh" }}>
-          <Canvas camera={{ position: [0, 1, 3] }}>
+          <Canvas 
+            camera={{ position: [0, 1, 3] }}
+            gl={{ antialias: true, alpha: true }}
+            dpr={[1, 2]}
+          >
             <Suspense fallback={<Loader />}>
-              <Float>
+              <Float
+                speed={1.5}
+                rotationIntensity={0.5}
+                floatIntensity={0.5}
+              >
                 <SpaceMan
                   scale={isMobile && 0.23}
                   position={isMobile && [0, -1.5, 0]}
