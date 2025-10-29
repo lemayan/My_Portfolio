@@ -58,8 +58,8 @@ const HeroText = () => {
                     
                     {/* Download CV Button - Desktop */}
                     <motion.a 
-                      href="/assets/Dennis_Lemayan_CV.pdf" 
-                      download="Dennis_Lemayan_Leleina_CV.pdf"
+                      href="/assets/DENNIS_LEMAYAN_LELEINA_CV.pdf" 
+                      download="DENNIS_LEMAYAN_LELEINA_CV.pdf"
                       className='mt-8 px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 flex items-center gap-2 w-fit'
                       variants={variants}
                       initial="hidden"
