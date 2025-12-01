@@ -84,7 +84,7 @@ export const myProjects = [
       "Built appointment scheduling system with automated reminders and conflict resolution.",
       "Created billing and invoicing module with insurance integration and payment tracking.",
     ],
-    href: "",
+    href: "https://github.com/lemayan/Healthcare",
     logo: "",
     image: "/assets/projects/HMS.png",
     tags: [
