@@ -8,7 +8,7 @@ const Footer = () => {
             {/* Copyright & Links - Left */}
             <div className="flex flex-col md:flex-row items-center gap-3 text-sm text-neutral-400 order-2 md:order-1">
                 <p className="text-center">
-                    © 2025 Dennis Lemayan Leleina. All rights reserved.
+                    © 2026 Dennis Lemayan Leleina. All rights reserved.
                 </p>
                 <div className="flex gap-5 text-sm text-neutral-400">
                     <Link to="/terms" className="hover:text-purple-400 transition-colors">
