@@ -9,7 +9,7 @@ function Navigation({ onClick }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'work', 'experience', 'contact'];
+      const sections = ['home', 'about', 'work', 'experience', 'blog', 'contact'];
       const scrollPosition = window.scrollY + 150; // Offset for navbar
 
       for (const sectionId of sections) {
@@ -98,6 +98,14 @@ function Navigation({ onClick }) {
     </li>
     <li className='nav-li'>
       <a 
+        className={`nav-link cursor-pointer ${activeSection === 'blog' ? 'bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold' : ''}`}
+        onClick={() => handleNavClick('blog')}
+      >
+        Blog
+      </a>
+    </li>
+    <li className='nav-li'>
+      <a 
         className={`nav-link cursor-pointer ${activeSection === 'contact' ? 'bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold' : ''}`}
         onClick={() => handleNavClick('contact')}
       >
@@ -141,47 +149,6 @@ const Navbar = () => {
             <nav className='flex'>
               <Navigation />
             </nav>
-            
-            {/* Let's Play Button */}
-            <motion.button
-              onClick={() => navigate('/games')}
-              className="relative px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white font-semibold overflow-hidden group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-                animate={{
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <span className="relative z-10 flex items-center gap-2">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
-                </svg>
-                Let's Play
-              </span>
-              <motion.div
-                className="absolute inset-0 rounded-full"
-                animate={{
-                  boxShadow: [
-                    '0 0 20px rgba(168, 85, 247, 0.4)',
-                    '0 0 40px rgba(236, 72, 153, 0.6)',
-                    '0 0 20px rgba(168, 85, 247, 0.4)'
-                  ]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </motion.button>
           </div>
         </div>
       </div>
@@ -196,22 +163,6 @@ const Navbar = () => {
           <nav className='pb-4'>
             <Navigation onClick={() => setIsOpen(false)} />
           </nav>
-          
-          {/* Mobile Let's Play Button */}
-          <div className="px-4 pb-4">
-            <button
-              onClick={() => {
-                navigate('/games');
-                setIsOpen(false);
-              }}
-              className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white rounded-full font-semibold flex items-center justify-center gap-2"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
-              </svg>
-              Let's Play
-            </button>
-          </div>
         </motion.div>
       )}
     </div>

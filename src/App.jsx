@@ -7,11 +7,11 @@ import About from "./sections/About"
 import Projects from "./sections/Projects"
 import Experiences from "./sections/Experiences"
 import Testimonial from "./sections/Testimonial"
+import Blog from "./sections/Blog"
 import Contact from "./sections/Contact"
 import Footer from "./sections/Footer"
 import Terms from "./sections/Terms"
 import Privacy from "./sections/Privacy"
-import Games from "./sections/Games"
 import ScrollToTop from "./components/ScrollToTop"
 import LoadingScreen from "./components/LoadingScreen"
 import SectionReveal from "./components/SectionReveal"
@@ -35,6 +35,7 @@ const HomePage = () => (
     <SectionReveal><div id="work"><Projects /></div></SectionReveal>
     <SectionReveal><div id="experience"><Experiences /></div></SectionReveal>
     <SectionReveal><Testimonial /></SectionReveal>
+    <SectionReveal><div id="blog"><Blog /></div></SectionReveal>
     <SectionReveal><div id="contact"><Contact /></div></SectionReveal>
   </>
 )
@@ -64,7 +65,6 @@ const App = () => {
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
-              <Route path="/games" element={<PageTransition><Games /></PageTransition>} />
               <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
               <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
             </Routes>

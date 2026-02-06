@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Building Scalable Web Applications with React and Node.js",
+    "excerpt": "Learn how to architect and build modern web applications that can scale to millions of users using React, Node.js, and cloud infrastructure.",
+    "content": "Full blog content here...",
+    "author": "Dennis Leleina",
+    "date": "2026-02-01",
+    "readTime": "8 min read",
+    "category": "Web Development",
+    "tags": ["React", "Node.js", "Scalability", "Cloud"],
+    "image": "/assets/projects/blog-1.png",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "The Future of Blockchain in Healthcare",
+    "excerpt": "Exploring how blockchain technology is revolutionizing healthcare systems, patient data management, and medical record keeping.",
+    "content": "Full blog content here...",
+    "author": "Dennis Leleina",
+    "date": "2026-01-28",
+    "readTime": "6 min read",
+    "category": "Blockchain",
+    "tags": ["Blockchain", "Healthcare", "Technology", "Innovation"],
+    "image": "/assets/projects/blog-2.png",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "From Django to FastAPI: A Migration Guide",
+    "excerpt": "A comprehensive guide on migrating your Django applications to FastAPI for improved performance and modern async capabilities.",
+    "content": "Full blog content here...",
+    "author": "Dennis Leleina",
+    "date": "2026-01-20",
+    "readTime": "10 min read",
+    "category": "Python",
+    "tags": ["Python", "Django", "FastAPI", "Backend"],
+    "image": "/assets/projects/blog-3.png",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "TypeScript Best Practices for Large-Scale Applications",
+    "excerpt": "Discover essential TypeScript patterns and practices that will help you maintain clean, type-safe code in enterprise applications.",
+    "content": "Full blog content here...",
+    "author": "Dennis Leleina",
+    "date": "2026-01-15",
+    "readTime": "7 min read",
+    "category": "TypeScript",
+    "tags": ["TypeScript", "JavaScript", "Best Practices", "Architecture"],
+    "image": "/assets/projects/blog-4.png",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Deploying Applications to Azure: A Complete Guide",
+    "excerpt": "Step-by-step guide to deploying your web applications to Microsoft Azure, including CI/CD setup and best practices.",
+    "content": "Full blog content here...",
+    "author": "Dennis Leleina",
+    "date": "2026-01-10",
+    "readTime": "12 min read",
+    "category": "Cloud",
+    "tags": ["Azure", "DevOps", "Deployment", "CI/CD"],
+    "image": "/assets/projects/blog-5.png",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Building Real-Time Applications with WebSockets",
+    "excerpt": "Learn how to implement real-time features in your applications using WebSockets, Socket.io, and modern web technologies.",
+    "content": "Full blog content here...",
+    "author": "Dennis Leleina",
+    "date": "2026-01-05",
+    "readTime": "9 min read",
+    "category": "Web Development",
+    "tags": ["WebSockets", "Real-time", "Socket.io", "JavaScript"],
+    "image": "/assets/projects/blog-6.png",
+    "featured": false
+  }
+]
