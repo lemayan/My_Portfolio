@@ -3,103 +3,166 @@ import { useEffect, useState } from 'react';
 
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Simulate loading progress - 2 seconds total
+    // Animate progress from 0 to 100
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(() => {
-            onLoadingComplete();
-          }, 200);
           return 100;
         }
-        return prev + 5;
+        return prev + 2;
       });
-    }, 100);
+    }, 30);
 
-    return () => clearInterval(interval);
+    const timer = setTimeout(() => {
+      setIsExiting(true);
+      setTimeout(() => {
+        onLoadingComplete();
+      }, 800);
+    }, 2000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
   }, [onLoadingComplete]);
 
   return (
     <motion.div
       initial={{ opacity: 1 }}
+      animate={{ opacity: isExiting ? 0 : 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-primary overflow-hidden"
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-[#06060c] via-[#0f0820] to-[#06060c] overflow-hidden"
     >
-      {/* Animated background particles - Sparkling stars */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+      {/* Animated background orbs */}
+      <motion.div
+        className="absolute w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
+        style={{
+          background: "radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%)",
+        }}
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+
+      {/* Logo */}
+      <motion.div
+        className="mb-8"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <img
+          src="/assets/logos/morancoder.png"
+          alt="Logo"
+          className="w-24 h-24 md:w-32 md:h-32 object-contain"
+        />
+      </motion.div>
+
+      {/* Progress bar and percentage */}
+      <motion.div
+        className="w-64 md:w-80"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        {/* Percentage */}
+        <div className="mb-4 text-center">
+          <motion.span
+            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+            key={progress}
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            {Math.floor(progress)}%
+          </motion.span>
+        </div>
+
+        {/* Progress bar background */}
+        <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden backdrop-blur-xl">
+          {/* Animated gradient bar */}
           <motion.div
-            key={i}
-            className="absolute"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+            className="absolute inset-y-0 left-0 rounded-full"
+            style={{
+              background: "linear-gradient(90deg, #6366f1, #ec4899, #22d3ee)",
+              backgroundSize: "200% 100%",
             }}
+            initial={{ width: "0%" }}
             animate={{
-              scale: [0, 1, 0],
-              opacity: [0, 1, 0],
-              rotate: [0, 180, 360]
+              width: `${progress}%`,
+              backgroundPosition: ["0% 0%", "100% 0%"],
             }}
             transition={{
-              duration: 2 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-              ease: "easeInOut"
+              width: { duration: 0.1, ease: "linear" },
+              backgroundPosition: {
+                duration: 2,
+                repeat: Infinity,
+                ease: "linear",
+              },
             }}
-          >
-            {/* Star shape */}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2L14.09 8.26L20 10L14.09 11.74L12 18L9.91 11.74L4 10L9.91 8.26L12 2Z"
-                fill={Math.random() > 0.5 ? '#a855f7' : '#3b82f6'}
-                opacity="0.6"
-              />
-              {/* Sparkle effect */}
-              <path
-                d="M12 0L13 6L18 8L13 10L12 16L11 10L6 8L11 6L12 0Z"
-                fill="white"
-                opacity="0.8"
-              />
-            </svg>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="relative flex flex-col items-center gap-8 z-10">
-        {/* Logo with shake animation */}
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ 
-            scale: [0.5, 1.1, 1],
-            opacity: 1,
-            rotate: [0, 5, -5, 0]
-          }}
-          transition={{ 
-            duration: 0.8,
-            rotate: {
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }
-          }}
-          className="relative z-10"
-        >
-          <img
-            src="/assets/logos/morancoder.png"
-            alt="Morancoder Logo"
-            className="w-32 h-32 object-contain"
           />
-        </motion.div>
+
+          {/* Glow effect */}
+          <motion.div
+            className="absolute inset-y-0 left-0 rounded-full blur-sm"
+            style={{
+              background: "linear-gradient(90deg, #6366f1, #ec4899)",
+              width: `${progress}%`,
+            }}
+            animate={{
+              opacity: [0.5, 0.8, 0.5],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        {/* Loading text */}
+        <motion.p
+          className="mt-4 text-center text-sm text-white/60 tracking-widest uppercase"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          Loading Experience...
+        </motion.p>
+      </motion.div>
+
+      {/* Decorative dots */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
       </div>
     </motion.div>
   );

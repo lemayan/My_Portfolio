@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Sora:wght@200..800&display=swap");
 @import "tailwindcss";
 @theme {
   --color-primary: #0f0a1f;
@@ -59,12 +59,82 @@
   --animate-spin-slow: spin-slow 20s linear infinite;
 }
 body {
-  background: linear-gradient(to bottom, #0f0a1f 0%, #030412 50%, #030412 100%);
+  background: #06060c;
   background-attachment: fixed;
-  font-family: "Funnel Display", sans-serif;
+  font-family: "Sora", sans-serif;
   color: white;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.display-font {
+  font-family: "Funnel Display", "Sora", sans-serif;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, 0.35), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(236, 72, 153, 0.25), transparent 60%),
+    radial-gradient(900px 700px at 50% 100%, rgba(34, 211, 238, 0.18), transparent 60%),
+    #06060c;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-surface {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.glass-card {
+  @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold;
+  background: linear-gradient(90deg, #ffffff, #c7d2fe, #a5f3fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-subtitle {
+  @apply text-sm md:text-base text-white/60;
+}
+
+.chip {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-white/70 border border-white/10 bg-white/5;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white transition-all duration-300;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35), 0 0 30px rgba(236, 72, 153, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.45), 0 0 35px rgba(236, 72, 153, 0.3);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white/80 border border-white/15 bg-white/5 transition-all duration-300;
+}
+
+.btn-ghost:hover {
+  @apply text-white border-white/30 bg-white/10;
 }
 
 .c-space {
@@ -96,6 +166,11 @@ body {
   @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
 }
 
+.nav-surface {
+  @apply backdrop-blur-xl bg-black/30 border-b border-white/10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
 .nav-li {
   @apply text-neutral-400 hover:text-white max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
 }
@@ -103,6 +178,31 @@ body {
 .nav-link {
   @apply text-lg md:text-base hover:text-white transition-colors;
 }
+
+.project-row {
+  @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.project-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.project-divider {
+  @apply my-12 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+}
+
+.project-title {
+  @apply text-2xl md:text-3xl font-semibold;
+}
+
+.project-tags {
+  @apply mt-2 flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/60;
+}
+
 /* Button Components */
 .btn {
   @apply relative px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden;
@@ -144,14 +244,14 @@ body {
 }
 
 .grid-default-color {
-  @apply p-6 bg-gradient-to-b from-storm to-indigo rounded-2xl;
+  @apply p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
 }
 
 .grid-special-color {
-  @apply p-6 bg-gradient-to-b from-royal to-lavender rounded-2xl;
+  @apply p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl;
 }
 .grid-black-color {
-  @apply p-6 bg-gradient-to-tl from-[#3A3A3A] via-[#242424] to-[#3A3A3A] rounded-2xl;
+  @apply p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-black/60 via-black/30 to-black/60 backdrop-blur-xl;
 }
 
 /* Contact Section*/

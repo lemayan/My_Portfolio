@@ -13,6 +13,9 @@ A stunning, fully responsive portfolio website built with React and cutting-edge
 
 - **Modern UI/UX** - Clean, professional design with smooth animations
 - **Fully Responsive** - Optimized for all devices and screen sizes
+- **Interactive Games Page** - Play chess and chat with AI assistant
+- **AI-Powered Chatbot** - OpenAI GPT-powered assistant for natural conversations
+- **Chess Game** - Play chess with coordinate labels and proper piece movement
 - **Interactive 3D Elements** - Three.js powered spaceman model with orbit controls
 - **Fast Performance** - Built with Vite for lightning-fast load times
 - **Smooth Animations** - Framer Motion powered transitions and reveals
@@ -87,15 +90,26 @@ yarn install
 
 ### 3. Environment Setup
 
-Create a `.env` file in the root directory (optional, for EmailJS configuration):
+Create a `.env` file in the root directory:
 
 ```env
+# OpenAI API Key for AI Chatbot (Required)
+VITE_OPENAI_API_KEY=your_openai_api_key_here
+
+# EmailJS Configuration (Optional)
 VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-> **Note:** The current EmailJS configuration is hardcoded in `src/sections/Contact.jsx`. You can replace these values with your own EmailJS credentials.
+**Getting your OpenAI API Key:**
+1. Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Sign up or log in to your account
+3. Navigate to API Keys section
+4. Create a new API key
+5. Copy the key and paste it in your `.env` file
+
+> **Note:** You can also copy `.env.example` to `.env` and fill in your credentials. The EmailJS configuration is currently hardcoded in `src/sections/Contact.jsx` but can be replaced with environment variables.
 
 ### 4. Add Your Assets
 
