@@ -32,7 +32,7 @@ const AIChatbot = ({ onClose }) => {
     try {
       // Strip www from origin so the function URL always hits the primary domain
       const baseUrl = window.location.origin.replace('://www.', '://');
-      const response = await fetch(`${baseUrl}/.netlify/functions/chat`, {
+      const response = await fetch(`${baseUrl}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
