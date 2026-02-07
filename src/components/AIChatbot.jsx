@@ -30,9 +30,8 @@ const AIChatbot = ({ onClose }) => {
 
   async function generateResponse(conversationHistory) {
     try {
-      // Strip www from origin so the function URL always hits the primary domain
-      const baseUrl = window.location.origin.replace('://www.', '://');
-      const response = await fetch(`${baseUrl}/api/chat`, {
+      // Use relative URL to avoid CORS redirect issues
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
