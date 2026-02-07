@@ -2,10 +2,30 @@
   publish = "dist"
   command = "npm run build"
 
+# Force www to redirect to non-www (GET requests only)
+[[redirects]]
+  from = "https://www.lemayanleleina.engineer/*"
+  to = "https://lemayanleleina.engineer/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Prevent browser AND CDN from caching HTML
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0"
+    CDN-Cache-Control = "no-store"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0"
+    CDN-Cache-Control = "no-store"
 
 [build.environment]
   NODE_VERSION = "18"

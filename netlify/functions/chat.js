@@ -1,5 +1,5 @@
-// Direct fetch API - no SDK needed
-exports.handler = async (event) => {
+// Netlify Function - ESM format
+export const handler = async (event) => {
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -133,7 +133,7 @@ IMPORTANT FORMATTING RULES:
     };
 
   } catch (error) {
-    console.error('OpenRouter API Error:', error);
+    console.error('Groq API Error:', error);
     
     return {
       statusCode: 500,
@@ -143,8 +143,7 @@ IMPORTANT FORMATTING RULES:
       },
       body: JSON.stringify({ 
         error: 'Failed to generate response. Please try again.',
-        details: error.message,
-        stack: error.stack
+        details: error.message
       })
     };
   }
