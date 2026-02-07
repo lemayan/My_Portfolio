@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import LoadingScreen from "./components/LoadingScreen"
 import SectionReveal from "./components/SectionReveal"
 import CursorGlow from "./components/CursorGlow"
+import FloatingChatButton from "./components/FloatingChatButton"
 
 const PageTransition = ({ children }) => (
   <motion.div
@@ -71,6 +72,7 @@ const App = () => {
           </AnimatePresence>
           <Footer />
           <ScrollToTop />
+          <FloatingChatButton />
         </div>
       </div>
     </>

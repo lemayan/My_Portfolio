@@ -9,3 +9,16 @@
 
 [build.environment]
   NODE_VERSION = "18"
+
+# Functions configuration
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Local development - reads .env file
+[dev]
+  command = "npm run dev"
+  targetPort = 5173
+  framework = "#custom"
+
+# Note: GROQ_API_KEY is loaded from .env file automatically
