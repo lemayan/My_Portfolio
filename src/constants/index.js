@@ -158,7 +158,7 @@ export const myProjects = [
       "Built transaction history tracking with detailed audit logs and reporting features.",
       "Created intuitive dashboard for account overview, balance checking, and fund transfers.",
     ],
-    href: "https://github.com/lemayan/Banking-application",
+    href: "https://github.com/lemayan/Bank_Application",
     logo: "",
     image: "/assets/projects/banking.png",
     tags: [
