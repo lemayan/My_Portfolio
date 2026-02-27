@@ -53,13 +53,11 @@ const App = () => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <LoadingScreen key="loading" onLoadingComplete={handleLoadingComplete} />
-        )}
-      </AnimatePresence>
-      
-      <div className='app-shell' style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease-in-out' }}>
+      {isLoading && (
+        <LoadingScreen key="loading" onLoadingComplete={handleLoadingComplete} />
+      )}
+
+      <div className='app-shell' style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.6s ease-in-out' }}>
         <CursorGlow />
         <div className='container mx-auto max-w-7xl'>
           <Navbar />

@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 
+const isTouchDevice = () =>
+  window.matchMedia('(pointer: coarse)').matches;
+
 const CursorGlow = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  if (isTouchDevice()) return null;
 
   useEffect(() => {
     const handleMouseMove = (e) => {
