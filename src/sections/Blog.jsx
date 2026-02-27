@@ -1,16 +1,18 @@
 import blogPostsData from "../data/blogPosts.json";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const navigate = useNavigate();
 
   const blogPosts = blogPostsData;
   const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
 
-  const filteredPosts = selectedCategory === "All" 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === "All"
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
@@ -76,11 +78,10 @@ const Blog = () => {
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
-                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
-              }`}
+              className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === category
+                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
+                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+                }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
@@ -168,6 +169,7 @@ const Blog = () => {
 
                   {/* Read More Button */}
                   <motion.button
+                    onClick={() => navigate(`/blog/${post.id}`)}
                     className="text-purple-400 hover:text-pink-400 transition-colors text-sm font-medium flex items-center gap-1"
                     whileHover={{ x: 5 }}
                   >
